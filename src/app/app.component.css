@@ -1,0 +1,23 @@
+/* Application-wide Styles */
+
+h1 {
+    color: #FF5733;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 250%;
+}
+h2, h3 {
+    color: #C70039;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+body {
+    margin: 2em;
+}
+body, input{
+    color: #900C3F;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* everywhere else */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
