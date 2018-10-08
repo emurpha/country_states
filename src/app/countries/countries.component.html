@@ -1,3 +1,13 @@
-<p>
-  countries works!
-</p>
+<h2>{{counrty.name | uppercase}}</h2>
+<div>
+  <label>Name:
+    <input [(ngModel)]="country.name" placeholder="name">
+  </label>
+  <label> Code:
+    <input [(ngModel)]="country.code" placeholder="code">
+  </label>
+</div>
+<!--<div><span>Id: </span>{{country.id}}</div>
+<div><span>Code: </span>{{country.code}}</div>
+<div><span>Name: </span>{{country.name}}</div>-->
+
