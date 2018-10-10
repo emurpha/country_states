@@ -1,0 +1,10 @@
+<div>
+    <label>Country Name: 
+      <select class="countries">
+        <option value="default">Select Country Name</option>
+        <option *ngFor="let country of countries">
+          <span class="badge">{{country.name}}</span>
+        </option>
+      </select>
+    </label>
+  </div>
