@@ -29,10 +29,6 @@ export class CountryService {
   addCountry(country: Country): Observable<Country> {
     return this.http.post<Country>(this.countriesUrl, country, httpOptions)
   }
-
-  //getCountry(name: string): Observable<Country> {
-    //const url = `${this.countriesUrl}/${name}`
-  //}
   
 
 };
