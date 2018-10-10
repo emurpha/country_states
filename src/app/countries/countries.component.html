@@ -1,20 +1,23 @@
 <!--<h2>{{country.name | uppercase}}</h2>-->
 <div>
   <label>Name:
-    <input [(ngModel)]="country.name" placeholder="Enter Country Name">
+    <input #countryName placeholder="Enter Country Name">
   </label>
   <label> Code:
-    <input [(ngModel)]="country.code" placeholder="Enter Country Code">
+    <input #countryCode placeholder="Enter Country Code">
   </label>
   <label>
-    <button onclick="addCountry()" class="addbtn">Add Country</button>
+    <button onclick="add(countryName.value, countryCode.value); countryName.value='', countryCode=''" class="addbtn">Add Country</button>
   </label>
 </div>
 
 <div>
-  <label>Name: 
-    <select>
+  <label>Country Name: 
+    <select class="countries">
       <option value="default">Select Country Name</option>
+      <option *ngFor="let country of countries">
+        <span class="badge">{{country.name}}</span>
+      </option>
     </select>
   </label>
 </div>

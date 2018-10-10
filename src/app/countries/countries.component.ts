@@ -17,11 +17,10 @@ export class CountriesComponent implements OnInit {
     this.countryService.getCountries()
         .subscribe(countries => this.countries = countries);
   }
-
-  add(name: string): void {
+  add(name:string, code: string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.countryService.addCountry({ name } as Country)
+    code = code.trim();
+    this.countryService.addCountry({ name, code} as Country)
       .subscribe(country => {
         this.countries.push(country);
       })
