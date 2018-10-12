@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { Country } from './country';
-import { COUNTRIES } from './mock-countries';
+import { State } from './state';
 
-import { Observable, of } from 'rxjs';
+import { Observable} from 'rxjs';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -21,6 +21,7 @@ export class CountryService {
   ){}
 
   private countriesUrl = 'https://xc-ajax-demo.herokuapp.com/api/countries/'; //URL to Web api
+  private statesUrl = 'https://xc-ajax-demo.herokuapp.com/api/countries/<country_code>/states/';
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countriesUrl)
@@ -28,6 +29,10 @@ export class CountryService {
 
   addCountry(country: Country): Observable<Country> {
     return this.http.post<Country>(this.countriesUrl, country, httpOptions)
+  }
+
+  getStates(state: State): Observable<State[]> {
+    return this.http.get<State[]>(this.statesUrl)
   }
   
 

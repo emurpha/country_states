@@ -7,4 +7,12 @@
         </option>
       </select>
     </label>
+    <label>State Name: 
+      <select class="states">
+        <option value="default">Select State Name</option>
+        <option *ngFor="let state of states">
+          <span class="badge">{{state.name}}</span>
+        </option>
+      </select>
+    </label>
   </div>

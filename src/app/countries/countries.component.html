@@ -6,7 +6,7 @@
     <input #countryCode placeholder="Enter Country Code">
   </label>
   <label>
-    <button (click)="add(countryName.value,countryCode.value)">Add Country</button>
+    <button (click)="add(countryName.value,countryCode.value); countryName.value=''; countryCode.value=''">Add Country</button>
   </label>
 </div>
 
