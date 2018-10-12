@@ -1,0 +1,44 @@
+/* Application-wide Styles */
+
+h1 {
+    color: #900C3F;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 250%;
+}
+h2, h3 {
+    color: #C70039;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+body {
+    margin: 2em;
+}
+body, input{
+    color: #900C3F;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* everywhere else */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+}
+nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color: #900C3F;
+    border-radius: 4px;
+  }
+  nav a:visited, a:link {
+    color: #900C3F;
+  }
+  nav a:hover {
+    color: 	#FFB6C1;
+    background-color: #900C3F;
+  }
+  nav a.active {
+    color: #900C3F;
+  }

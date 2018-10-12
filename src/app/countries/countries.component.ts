@@ -18,9 +18,8 @@ export class CountriesComponent implements OnInit {
         .subscribe(countries => this.countries = countries);
   }
   add(name:string, code: string): void {
-    name = name.trim();
-    code = code.trim();
-    this.countryService.addCountry({ name, code} as Country)
+    if (!name) { return; }
+    this.countryService.addCountry({ code, name} as Country)
       .subscribe(country => {
         this.countries.push(country);
       })

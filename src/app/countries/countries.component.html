@@ -6,19 +6,11 @@
     <input #countryCode placeholder="Enter Country Code">
   </label>
   <label>
-    <button onclick="add(countryName.value, countryCode.value); countryName.value='', countryCode=''" class="addbtn">Add Country</button>
+    <button (click)="add(countryName.value,countryCode.value)">Add Country</button>
   </label>
 </div>
 
-<div>
-  <label>Country Name: 
-    <select class="countries">
-      <option value="default">Select Country Name</option>
-      <option *ngFor="let country of countries">
-        <span class="badge">{{country.name}}</span>
-      </option>
-    </select>
-  </label>
-</div>
+
+
 
 
