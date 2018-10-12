@@ -11,7 +11,7 @@ import { CountryService } from '../country.service';
 })
 export class CountriesComponent implements OnInit {
   countries: Country [];
-  states: State[];
+  states: State;
 
   constructor(private countryService: CountryService) { }
 
@@ -27,13 +27,15 @@ export class CountriesComponent implements OnInit {
       })
   }
 
-  getStates(): void {
-    this.countryService.getStates()
-      .subscribe(states => this.states = states);
-  }
+  // getStates(): void {
+  //   this.countryService.getState()
+  //     .subscribe(states => this.states = states);
+  //     // countryId: number
+  // }
 
   ngOnInit() {
     this.getCountries();
+    // this.getStates();
   }
 
 }

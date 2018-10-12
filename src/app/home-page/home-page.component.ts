@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Country } from '../country';
+import { State } from '../state';
 
 import { CountryService } from '../country.service';
+
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-page',
@@ -11,8 +15,12 @@ import { CountryService } from '../country.service';
 })
 export class HomePageComponent implements OnInit {
   countries: Country[] = [];
+  states: State;
 
-  constructor(private countryService: CountryService) { }
+  constructor(
+    private countryService: CountryService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.getCountries();
@@ -21,6 +29,11 @@ export class HomePageComponent implements OnInit {
   getCountries(): void {
     this.countryService.getCountries()
       .subscribe(countries => this.countries = countries)
+  }
+  getState(): void {
+    const countryId = +this.route.snapshot.paramMap.get('countryId');
+    this.countryService.getState(countryId)
+      .subscribe(state => this.states = state)
   }
 
 }

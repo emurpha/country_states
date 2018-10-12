@@ -2,7 +2,7 @@
     <label>Country Name: 
       <select class="countries">
         <option value="default">Select Country Name</option>
-        <option *ngFor="let country of countries">
+        <option *ngFor="let country of countries"  onselect="getState()">
           <span class="badge">{{country.name}}</span>
         </option>
       </select>
