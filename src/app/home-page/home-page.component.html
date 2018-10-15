@@ -1,18 +1,25 @@
 <div>
     <label>Country Name: 
-      <select class="countries">
-        <option value="default">Select Country Name</option>
-        <option *ngFor="let country of countries"  onselect="getState()">
+      <select id="mySelect" class="countries" (change)="getState(getId())">
+        <option value="">Select Country Name</option>
+        <option *ngFor="let country of countries">
           <span class="badge">{{country.name}}</span>
         </option>
       </select>
     </label>
+    <script>
+      function getId() {
+        const country = document.getElementById("mySelect").value;
+        return country
+      }
+    </script>
     <label>State Name: 
       <select class="states">
-        <option value="default">Select State Name</option>
+        <option value="">Select State Name</option>
         <option *ngFor="let state of states">
           <span class="badge">{{state.name}}</span>
         </option>
       </select>
     </label>
   </div>
+  <!-- (change)="getId()" -->

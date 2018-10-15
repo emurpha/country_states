@@ -31,9 +31,10 @@ export class CountryService {
     return this.http.post<Country>(this.countriesUrl, country, httpOptions)
   }
   
-  getState(countryId: number): Observable<State> {
+  getState(countryId: string): Observable<State[]> {
     const url = `${this.statesUrl}/${countryId}/states`;
-    return this.http.get<State>(url)
+    console.log("URL="+url);
+    return this.http.get<State[]>(url)
     
   }
 

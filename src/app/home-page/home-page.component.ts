@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   countries: Country[] = [];
-  states: State;
+  states: State[] = [];
 
   constructor(
     private countryService: CountryService,
@@ -26,14 +26,18 @@ export class HomePageComponent implements OnInit {
     this.getCountries();
   }
 
-  getCountries(): void {
+  getCountries(){
     this.countryService.getCountries()
-      .subscribe(countries => this.countries = countries)
+      .subscribe(countries => this.countries = countries);
+    return this.countries
   }
-  getState(): void {
-    const countryId = +this.route.snapshot.paramMap.get('countryId');
+  getState(country): void {
+    const countryId = country.code;
+    // console.log(country)
+    // const countryId = country.countryId;
+    console.log(countryId);
     this.countryService.getState(countryId)
-      .subscribe(state => this.states = state)
+      .subscribe(states => this.states = states)
   }
 
 }
