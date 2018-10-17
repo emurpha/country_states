@@ -35,7 +35,12 @@ export class CountryService {
     const url = `${this.statesUrl}/${countryId}/states`;
     console.log("URL="+url);
     return this.http.get<State[]>(url)
-    
+  }
+
+  addState(state: State, coCountryCode): Observable<State> {
+    const urlS = `${this.statesUrl}/${coCountryCode}/states`;
+    console.log(urlS);
+    return this.http.post<State>(urlS, state, httpOptions)
   }
 
 };
