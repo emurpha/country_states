@@ -7,6 +7,8 @@ import { CountryService } from '../country.service';
 
 import { ActivatedRoute } from '@angular/router';
 
+import { NgSelectOption } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home-page',
@@ -31,10 +33,8 @@ export class HomePageComponent implements OnInit {
       .subscribe(countries => this.countries = countries);
     return this.countries
   }
-  getState(country): void {
-    const countryId = country.code;
-    // console.log(country)
-    // const countryId = country.countryId;
+
+  getState(countryId): void {
     console.log(countryId);
     this.countryService.getState(countryId)
       .subscribe(states => this.states = states)

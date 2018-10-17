@@ -1,18 +1,12 @@
 <div>
     <label>Country Name: 
-      <select id="mySelect" class="countries" (change)="getState(getId())">
+      <select #box class="countries" (change)="getState($event.target.value)">
         <option value="">Select Country Name</option>
-        <option *ngFor="let country of countries">
+        <option *ngFor="let country of countries" [value]="country.code">
           <span class="badge">{{country.name}}</span>
         </option>
       </select>
     </label>
-    <script>
-      function getId() {
-        const country = document.getElementById("mySelect").value;
-        return country
-      }
-    </script>
     <label>State Name: 
       <select class="states">
         <option value="">Select State Name</option>
@@ -22,4 +16,4 @@
       </select>
     </label>
   </div>
-  <!-- (change)="getId()" -->
+ 
