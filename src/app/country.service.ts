@@ -20,8 +20,8 @@ export class CountryService {
     private http: HttpClient
   ){}
 
-  private countriesUrl = 'https://xc-ajax-demo.herokuapp.com/api/countries/'; //URL to Web api
-  private statesUrl = 'https://xc-ajax-demo.herokuapp.com/api/countries';
+  private countriesUrl = 'http://localhost:8000/countries/'; //URL to Web api
+  private statesUrl = 'http://localhost:8000/countries';
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.countriesUrl)
@@ -32,13 +32,13 @@ export class CountryService {
   }
   
   getState(countryId: string): Observable<State[]> {
-    const url = `${this.statesUrl}/${countryId}/states`;
+    const url = `${this.statesUrl}/${countryId}/states/`;
     console.log("URL="+url);
     return this.http.get<State[]>(url)
   }
 
   addState(state: State, coCountryCode): Observable<State> {
-    const urlS = `${this.statesUrl}/${coCountryCode}/states`;
+    const urlS = `${this.statesUrl}/${coCountryCode}/states/`;
     console.log(urlS);
     return this.http.post<State>(urlS, state, httpOptions)
   }
