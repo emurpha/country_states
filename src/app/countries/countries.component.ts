@@ -21,15 +21,15 @@ export class CountriesComponent implements OnInit {
   }
   add(name:string, code: string): void {
     if (!name) { return; }
-    this.countryService.addCountry({ code, name} as Country)
+    this.countryService.addCountry({ code, name } as Country)
       .subscribe(country => {
         this.countries.push(country);
       })
   }
 
-  addS(name: string, code: string, coCountryCode: string): void {
+  addS(name: string, code: string, country_code: string): void {
     if (!name) { return; }
-    this.countryService.addState({ code, name } as State, coCountryCode)
+    this.countryService.addState({ code, name, country_code } as State, country_code)
       .subscribe(state => console.log(state))
   }
 

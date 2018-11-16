@@ -3,4 +3,5 @@ export class State {
     code: string;
     name: string;
     countryId: number;
+    country_code: string;
 }
