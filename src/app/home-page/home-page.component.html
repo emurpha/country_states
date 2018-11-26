@@ -1,11 +1,25 @@
 <div>
     <label>Country Name: 
-      <select #box class="countries" (change)="getState($event.target.value)">
+      <select #box class="countries" (change)="getState($event.target.value)" id='countrySelect'>
         <option value="">Select Country Name</option>
         <option *ngFor="let country of countries" [value]="country.code">
           <span class="badge">{{country.name}}</span>
         </option>
       </select>
+      <script type='text/javascript'>
+        function sortSelect(option, sortDescending) {
+          if(typeof option == 'string')
+            option = document.getElementById(option);
+          
+          var lis = option.getElementsByTagName('span');
+          var vals = [];
+          
+          for (var i = 0, l = lis.length; i < l; i++)
+            vals.push(lis[i].innerHTML);
+          
+          vals.sort()
+        }
+      </script>
     </label>
     <label>State Name: 
       <select class="states">

@@ -19,7 +19,12 @@
     <input #stateCode placeholder="Enter State Code">
   </label>
   <label>Country Code:
-    <input #coCountryCode placeholder="Enter Corresponding Country Code" (input)="coCountryCode.code=$event.target.value">
+    <select #coCountryCode class="coCountryCode">
+      <option value="">Select Country Code</option>
+      <option *ngFor="let country of countries">
+        <span class="badge">{{country.code}}</span>
+      </option>
+    </select>
   </label>
   <button (click)="addS(stateName.value,stateCode.value,coCountryCode.value); stateName.value=''; stateCode.value=''; coCountryCode.value=''">Add State</button>
 </div>
