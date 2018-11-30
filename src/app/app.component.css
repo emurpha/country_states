@@ -1,25 +1,24 @@
 /* Application-wide Styles */
 
 h1 {
-    color: #900C3F;
+    padding-top: 100px;
+    color: rgb(255, 255, 255);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 250%;
+    font-size: 500%;
+    text-shadow: 5px 0 black, 0 5px black, 5px 0 black, 0 5px black;
 }
 h2, h3 {
     color: #C70039;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: lighter;
 }
-body {
-    margin: 2em;
-}
-body, input{
+input{
     color: #900C3F;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-/* everywhere else */
+
 * {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Impact, 'Times New Roman', Times, serif;
 }
 nav a {
     padding: 5px 10px;
@@ -27,16 +26,34 @@ nav a {
     margin-right: 20px;
     margin-bottom: 20px;
     display: inline-block;
-    background-color: #FFB6C1;
+    background-color: #0F8A5F;
     border-radius: 4px;
+    font-size: 35px;
   }
 nav a:visited, a:link {
-    color: #900C3F;
+    color: white;
 }
 nav a:hover {
-    color: 	#FFB6C1;
-    background-color: #900C3F;
+    color: white;
+    background-color: #d42426;
 }
-nav a.active {
-    color: #900C3F;
+img {
+    opacity: .5;
+    z-index: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/* html {
+    height: 100vh;
+}  */
+div {
+    min-height: 100vh;
+    background-image: url('https://sarachstefith.files.wordpress.com/2014/12/grumpy_cat_quotes_no-7.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0;
 }
